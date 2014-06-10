@@ -1,0 +1,23 @@
+---
+abstract: 'count the number of syllables in English words'
+author:
+  - 'Greg Fast <gdf@imsa.edu>'
+build_requires: {}
+configure_requires:
+  ExtUtils::MakeMaker: '6.30'
+dynamic_config: 0
+generated_by: 'Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141170'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: '1.4'
+name: Lingua-EN-Syllable
+requires:
+  Exporter: '0'
+  perl: '5.006'
+  strict: '0'
+  warnings: '0'
+resources:
+  homepage: https://github.com/neilbowers/Lingua-EN-Syllable
+  repository: https://github.com/neilbowers/Lingua-EN-Syllable.git
+version: '0.26'

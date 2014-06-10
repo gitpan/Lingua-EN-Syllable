@@ -1,19 +1,22 @@
-# Lingua::EN::Syllable : utility function for counting syllables in words
 package Lingua::EN::Syllable;
+$Lingua::EN::Syllable::VERSION = '0.26';
+# ABSTRACT: count the number of syllables in English words
+
+use 5.006;
+use strict;
+use warnings;
 
 # note that this is not infallible.  it does fail for some percentage of 
 # words (10% seems a good guess)...  so it's useful for approximation, but
 # don't use this for running your nuclear reactor...
 
 require Exporter;
-@ISA = qw/ Exporter /;
-@EXPORT = qw/ syllable /;
-@EXPORT_OK = qw/ @AddSyl @SubSyl /;
-use vars qw/ $VERSION $REVISION @AddSyl @SubSyl /;
-use strict;
 
-$VERSION = '0.251';
-$REVISION = '$Id: Syllable.pm,v 1.7 1998/09/11 15:06:18 gdf Exp $ ';
+our @ISA        = qw/ Exporter /;
+our @EXPORT     = qw/ syllable /;
+our @EXPORT_OK  = qw/ @AddSyl @SubSyl /;
+our @AddSyl;
+our @SubSyl;
 
 # basic algortithm:
 # each vowel-group indicates a syllable, except for:
@@ -92,7 +95,7 @@ __END__
 
 =head1 NAME
 
-Lingua::EN::Syllable - Routine for estimating syllable count in words.
+Lingua::EN::Syllable - count the number of syllables in English words
 
 =head1 SYNOPSIS
 
@@ -132,10 +135,16 @@ Contractions are not well supported.
 Compound words (like "lifeboat"), where the first word ends in a silent 'e'
 are counted with an extra syllable.
 
-=head1 COPYRIGHT
+=head1 REPOSITORY
 
-Distributed under the same terms as Perl.
-Contact the author with any questions.
+L<https://github.com/neilbowers/Lingua-EN-Syllable>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 1999 by Greg Fast E<lt>gdf@imsa.eduE<gt>
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =head1 AUTHOR
 
